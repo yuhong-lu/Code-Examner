@@ -10,9 +10,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" show_ignored="true">
+  <component name="ChangesViewManager">
     <option name="groupingKeys">
       <option value="directory" />
+      <option value="module" />
       <option value="repository" />
     </option>
   </component>
@@ -110,7 +111,7 @@
       <updated>1761311576837</updated>
       <workItem from="1761311578958" duration="5682000" />
       <workItem from="1761361098384" duration="8409000" />
-      <workItem from="1761383667020" duration="2422000" />
+      <workItem from="1761383667020" duration="2727000" />
     </task>
     <task id="LOCAL-00001" summary="demo&#10;缺少异常处理和工具类&#10;缺少Judge0和RabbitMQ">
       <option name="closed" value="true" />
@@ -136,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761386661743</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="·完善系统配置和工具&#10;·完善部分服务和控制&#10;-高速缓存部分因Redis问题暂时注释">
+      <option name="closed" value="true" />
+      <created>1761386953970</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761386953970</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +156,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
