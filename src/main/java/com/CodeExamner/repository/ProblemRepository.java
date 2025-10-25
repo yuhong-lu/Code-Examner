@@ -17,4 +17,6 @@ public interface ProblemRepository extends JpaRepository<Problem, Long>, JpaSpec
     Page<Problem> findAccessibleProblems(Long userId, Pageable pageable);
 
     Page<Problem> findByCreatedById(Long userId, Pageable pageable);
+    Long countByIsPublicTrue();
+
 }

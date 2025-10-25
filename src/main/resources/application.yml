@@ -4,12 +4,14 @@ server:
     context-path: /api
 
 spring:
+  # 数据源配置
   datasource:
     url: jdbc:mysql://localhost:3306/code_examner?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf8
     username: root
     password: 962464
     driver-class-name: com.mysql.cj.jdbc.Driver
-  
+
+  # JPA配置
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,12 +21,57 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
 
+  # 邮件配置
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: your-email@qq.com  # 需要替换为实际邮箱
+    password: your-password      # 需要替换为授权码
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  # Redis配置（如果使用的话）
+  #redis:
+  #  host: localhost
+  #  port: 6379
+  #  timeout: 2000ms
+  #  lettuce:
+  #    pool:
+  #      max-active: 8
+  #      max-wait: -1ms
+  #      max-idle: 8
+  #      min-idle: 0
+
+# 自定义应用配置
+app:
+  file:
+    upload-dir: uploads
+  judge0:
+    base-url: http://localhost:2358
+    callback-url: http://localhost:8080/api/judge/callback
+
 # JWT配置
 jwt:
   secret: mySuperSecretKeyForJWTTokenGenerationThatIsAtLeast32CharactersLong
   expiration: 86400000  # 24小时 (毫秒)
 
+# 日志配置
 logging:
   level:
-    com.yourexamner: DEBUG
-    org.springframework.security: DEBUG
+    com.CodeExamner: DEBUG
+    org.springframework.security: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
