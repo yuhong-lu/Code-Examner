@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe42e7a2-92ca-4a25-ba84-6605e0dae579" name="更改" comment="·完善系统配置和工具&#10;·完善部分服务和控制&#10;-高速缓存部分因Redis问题暂时注释">
-      <change afterPath="$PROJECT_DIR$/ClassStructure.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatabaseStructure.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enum.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CodeExamner/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CodeExamner/dto/response/StatisticsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/dto/response/StatisticsResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CodeExamner/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CodeExamner/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CodeExamner/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="fe42e7a2-92ca-4a25-ba84-6605e0dae579" name="更改" comment="·完善系统配置和工具&#10;·完善部分服务和控制&#10;-高速缓存部分因Redis问题暂时注释" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +116,7 @@
       <workItem from="1761361098384" duration="8409000" />
       <workItem from="1761383667020" duration="3918000" />
       <workItem from="1761391355070" duration="3317000" />
-      <workItem from="1761458774864" duration="2036000" />
+      <workItem from="1761458774864" duration="2392000" />
     </task>
     <task id="LOCAL-00001" summary="demo&#10;缺少异常处理和工具类&#10;缺少Judge0和RabbitMQ">
       <option name="closed" value="true" />
@@ -170,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761387023605</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="·完善系统配置和工具&#10;·完善部分服务和控制&#10;-高速缓存部分因Redis问题暂时注释">
+      <option name="closed" value="true" />
+      <created>1761462308908</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761462308908</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,7 +183,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
