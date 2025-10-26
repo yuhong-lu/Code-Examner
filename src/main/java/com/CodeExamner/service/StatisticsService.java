@@ -11,6 +11,8 @@ import com.CodeExamner.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.CodeExamner.entity.enums.UserRole;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,8 +37,8 @@ public class StatisticsService {
 
         // 用户统计
         response.setTotalUsers(userRepository.count());
-        response.setTotalStudents(userRepository.countByRole("STUDENT"));
-        response.setTotalTeachers(userRepository.countByRole("TEACHER"));
+        response.setTotalStudents(userRepository.countByRole(UserRole.STUDENT));
+        response.setTotalTeachers(userRepository.countByRole(UserRole.TEACHER));
 
         // 题目统计
         response.setTotalProblems(problemRepository.count());
