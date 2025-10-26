@@ -1,0 +1,117 @@
+@startuml
+!theme plain
+
+title CodeExamner 实体类关系图 (基于实际代码)
+
+class User {
+  - Long id
+  - String username
+  - String password
+  - String email
+  - UserRole role
+  - LocalDateTime createTime
+  - LocalDateTime updateTime
+  ..
+  + onCreate()
+  + onUpdate()
+  + getAuthorities()
+}
+
+class Student {
+  - String studentId
+  - String realName
+  - String className
+}
+
+class Problem {
+  - Long id
+  - String title
+  - String description
+  - String templateCode
+  - Difficulty difficulty
+  - Integer timeLimit
+  - Integer memoryLimit
+  - User createdBy
+  - LocalDateTime createTime
+  - Boolean isPublic
+  - List<TestCase> testCases
+  ..
+  + onCreate()
+}
+
+class TestCase {
+  - Long id
+  - Problem problem
+  - String input
+  - String expectedOutput
+  - Boolean isSample
+}
+
+class Exam {
+  - Long id
+  - String title
+  - String description
+  - User createdBy
+  - LocalDateTime startTime
+  - LocalDateTime endTime
+  - ExamStatus status
+  - Integer duration
+  - List<ExamProblem> problems
+  ..
+  + updateStatus()
+}
+
+class ExamProblem {
+  - Long id
+  - Exam exam
+  - Problem problem
+  - Integer score
+  - Integer sequence
+}
+
+class Submission {
+  - Long id
+  - Problem problem
+  - Exam exam
+  - Student student
+  - String code
+  - String language
+  - JudgeStatus status
+  - Integer score
+  - Integer timeUsed
+  - Integer memoryUsed
+  - LocalDateTime submitTime
+  - List<SubmissionDetail> details
+  ..
+  + onCreate()
+}
+
+class SubmissionDetail {
+  - Long id
+  - Submission submission
+  - TestCase testCase
+  - JudgeStatus status
+  - Integer timeUsed
+  - Integer memoryUsed
+  - String output
+  - String errorMessage
+}
+
+' 继承关系
+User <|-- Student
+
+' 组合关系
+Problem *-- TestCase : "1..*"
+Submission *-- SubmissionDetail : "1..*"
+Exam *-- ExamProblem : "1..*"
+
+' 关联关系
+User --> Problem : "创建"
+User --> Exam : "创建"
+Student --> Submission : "提交"
+Problem --> Submission : "被提交"
+Exam --> Submission : "包含"
+ExamProblem --> Problem : "引用"
+SubmissionDetail --> TestCase : "测试"
+
+@enduml

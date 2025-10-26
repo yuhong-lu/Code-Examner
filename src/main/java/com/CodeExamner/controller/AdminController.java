@@ -3,6 +3,7 @@ package com.CodeExamner.controller;
 
 import com.CodeExamner.dto.response.StatisticsResponse;
 import com.CodeExamner.entity.User;
+import com.CodeExamner.entity.enums.UserRole;  // 正确的导入路径
 import com.CodeExamner.service.StatisticsService;
 import com.CodeExamner.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,11 +49,19 @@ public class AdminController {
         return ResponseEntity.ok().build();
     }
 
+    // 添加更新用户角色的接口
+    @PutMapping("/users/{userId}/role")
+    public ResponseEntity<User> updateUserRole(
+            @PathVariable Long userId,
+            @RequestParam UserRole role) {
+        User updatedUser = userService.updateUserRole(userId, role);
+        return ResponseEntity.ok(updatedUser);
+    }
+
     @GetMapping("/dashboard")
     public ResponseEntity<Map<String, Object>> getAdminDashboard() {
         StatisticsResponse stats = statisticsService.getSystemStatistics();
 
-        // 添加更多仪表板数据
         Map<String, Object> dashboard = Map.of(
                 "systemStats", stats,
                 "recentActivity", "最近活动数据",

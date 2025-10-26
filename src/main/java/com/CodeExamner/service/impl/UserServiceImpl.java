@@ -2,16 +2,22 @@
 package com.CodeExamner.service.impl;
 
 import com.CodeExamner.entity.User;
+import com.CodeExamner.entity.enums.UserRole;
 import com.CodeExamner.repository.UserRepository;
 import com.CodeExamner.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -20,6 +26,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    // 原有方法保持不变...
     @Override
     public User register(User user) {
         if (existsByUsername(user.getUsername())) {
@@ -28,7 +35,6 @@ public class UserServiceImpl implements UserService {
         if (existsByEmail(user.getEmail())) {
             throw new RuntimeException("邮箱已被注册");
         }
-
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
@@ -87,5 +93,34 @@ public class UserServiceImpl implements UserService {
         }
         currentUser.setPassword(passwordEncoder.encode(newPassword));
         userRepository.save(currentUser);
+    }
+
+    // 新增的管理员方法
+    @Override
+    @PreAuthorize("hasRole('ADMIN')")
+    public Page<User> getAllUsers(Pageable pageable) {
+        return userRepository.findAll(pageable);
+    }
+
+    @Override
+    @PreAuthorize("hasRole('ADMIN')")
+    public void deleteUser(Long userId) {
+        User user = findById(userId);
+
+        // 防止删除自己
+        User currentUser = getCurrentUser();
+        if (user.getId().equals(currentUser.getId())) {
+            throw new RuntimeException("不能删除自己的账户");
+        }
+
+        userRepository.delete(user);
+    }
+
+    @Override
+    @PreAuthorize("hasRole('ADMIN')")
+    public User updateUserRole(Long userId, UserRole role) {
+        User user = findById(userId);
+        user.setRole(role);
+        return userRepository.save(user);
     }
 }
