@@ -1,14 +1,68 @@
-com/yourexamner/
-├── config/               # 配置类
-├── controller/           # 控制层 - REST API
-├── service/              # 业务逻辑层
-│   ├── impl/             # 服务实现类
-├── repository/           # 数据访问层
-├── entity/               # 实体类（JPA）
-├── dto/                  # 数据传输对象
-│   ├── request/          # 请求DTO
-│   └── response/         # 响应DTO
-├── util/                 # 工具类
-├── exception/            # 异常处理
-├── security/             # 安全相关
-└── mq/                   # 消息队列相关
+CodeExamner/
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── CodeExamner
+│   │   │           ├── CodeExamnerApplication.java
+│   │   │           ├── config
+│   │   │           ├── controller
+│   │   │           ├── dto
+│   │   │           ├── entity
+│   │   │           ├── exception
+│   │   │           ├── judge0
+│   │   │           ├── mq
+│   │   │           ├── repository
+│   │   │           ├── security
+│   │   │           ├── service
+│   │   │           └── util
+│   │   └── resources
+│   │       └── application.yml
+│   └── test
+│       └── java
+├── target
+│   ├── classes
+│   │   ├── com
+│   │   │   └── CodeExamner
+│   │   │       ├── controller
+│   │   │       │   ├── AuthController.class
+│   │   │       │   ├── ExamController.class
+│   │   │       │   ├── ProblemController.class
+│   │   │       │   └── SubmissionController.class
+│   │   │       ├── dto
+│   │   │       │   ├── request
+│   │   │       │   └── response
+│   │   │       ├── entity
+│   │   │       │   ├── Exam.class
+│   │   │       │   ├── ExamProblem.class
+│   │   │       │   ├── Problem.class
+│   │   │       │   ├── Student.class
+│   │   │       │   ├── Submission.class
+│   │   │       │   ├── SubmissionDetail.class
+│   │   │       │   ├── TestCase.class
+│   │   │       │   ├── User.class
+│   │   │       │   └── enums
+│   │   │       ├── repository
+│   │   │       │   ├── ExamProblemRepository.class
+│   │   │       │   ├── ExamRepository.class
+│   │   │       │   ├── ProblemRepository.class
+│   │   │       │   ├── SubmissionRepository.class
+│   │   │       │   ├── TestCaseRepository.class
+│   │   │       │   └── UserRepository.class
+│   │   │       ├── security
+│   │   │       │   ├── JwtAuthenticationFilter.class
+│   │   │       │   ├── JwtUtil.class
+│   │   │       │   ├── SecurityConfig.class
+│   │   │       │   └── UserDetailsServiceImpl.class
+│   │   │       ├── service
+│   │   │       │   ├── ExamService.class
+│   │   │       │   ├── ProblemService.class
+│   │   │       │   ├── SubmissionService.class
+│   │   │       │   ├── UserService.class
+│   │   │       │   └── impl
+│   │   │       └── CodeExamnerApplication.class
+│   │   └── application.yml
+│   └── generated-sources
+│       └── annotations
+├── README.md
+└── pom.xml

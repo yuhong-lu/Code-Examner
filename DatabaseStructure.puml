@@ -1,0 +1,115 @@
+@startuml
+!theme crt-amber
+
+title CodeExamner 数据库关系图 (基于实际代码)
+
+entity users {
+  * id : Long <<PK>>
+  --
+  * username : String <<UNIQUE>>
+  * password : String
+  email : String
+  * role : UserRole
+  create_time : LocalDateTime
+  update_time : LocalDateTime
+}
+
+entity students {
+  * id : Long <<PK><FK>>
+  --
+  student_id : String
+  real_name : String
+  class_name : String
+}
+
+entity problems {
+  * id : Long <<PK>>
+  --
+  * title : String
+  description : TEXT
+  template_code : TEXT
+  difficulty : Difficulty
+  time_limit : Integer
+  memory_limit : Integer
+  created_by : Long <<FK>>
+  create_time : LocalDateTime
+  is_public : Boolean
+}
+
+entity exams {
+  * id : Long <<PK>>
+  --
+  * title : String
+  description : String
+  created_by : Long <<FK>>
+  * start_time : LocalDateTime
+  * end_time : LocalDateTime
+  * status : ExamStatus
+  duration : Integer
+}
+
+entity submissions {
+  * id : Long <<PK>>
+  --
+  * problem_id : Long <<FK>>
+  exam_id : Long <<FK>>
+  * student_id : Long <<FK>>
+  * code : TEXT
+  * language : String
+  * status : JudgeStatus
+  score : Integer
+  time_used : Integer
+  memory_used : Integer
+  submit_time : LocalDateTime
+}
+
+entity submission_details {
+  * id : Long <<PK>>
+  --
+  * submission_id : Long <<FK>>
+  * test_case_id : Long <<FK>>
+  * status : JudgeStatus
+  time_used : Integer
+  memory_used : Integer
+  output : TEXT
+  error_message : TEXT
+}
+
+entity test_cases {
+  * id : Long <<PK>>
+  --
+  * problem_id : Long <<FK>>
+  input : TEXT
+  expected_output : TEXT
+  is_sample : Boolean
+}
+
+entity exam_problems {
+  * id : Long <<PK>>
+  --
+  * exam_id : Long <<FK>>
+  * problem_id : Long <<FK>>
+  score : Integer
+  sequence : Integer
+}
+
+' 继承关系
+users ||..|| students : "继承"
+
+' 一对多关系
+users ||..o{ problems : "创建"
+users ||..o{ exams : "创建"
+students ||..o{ submissions : "提交"
+problems ||..o{ submissions : "被提交"
+exams ||..o{ submissions : "包含"
+problems ||..o{ test_cases : "拥有"
+submissions ||..o{ submission_details : "包含细节"
+exams ||..o{ exam_problems : "包含题目"
+
+' 多对多关系 (通过exam_problems连接)
+exams }o..o{ problems : "包含"
+
+' 关联关系
+submission_details }o..|| test_cases : "测试"
+
+@enduml

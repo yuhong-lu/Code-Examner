@@ -14,4 +14,12 @@ public class StatisticsResponse {
     private Long ongoingExams;
     private Long totalSubmissions;
     private Long acceptedSubmissions;
+
+    // 可以添加计算属性
+    public Double getAcceptanceRate() {
+        if (totalSubmissions == null || totalSubmissions == 0) {
+            return 0.0;
+        }
+        return (double) acceptedSubmissions / totalSubmissions * 100;
+    }
 }
