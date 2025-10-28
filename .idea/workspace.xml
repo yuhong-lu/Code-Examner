@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe42e7a2-92ca-4a25-ba84-6605e0dae579" name="更改" comment="·修复修改用户身份功能" />
+    <list default="true" id="fe42e7a2-92ca-4a25-ba84-6605e0dae579" name="更改" comment="·修复修改用户身份功能">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/config/Judge0Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/controller/JudgeCallbackController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/dto/request/Judge0CallbackRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/dto/request/Judge0SubmissionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/dto/response/Judge0SubmissionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/repository/SubmissionDetailRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CodeExamner/entity/enums/JudgeStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/entity/enums/JudgeStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CodeExamner/judge0/Judge0Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/judge0/Judge0Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CodeExamner/repository/TestCaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/repository/TestCaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CodeExamner/service/impl/JudgeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CodeExamner/service/impl/JudgeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,23 +33,23 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="UML Sequence" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "author": "yuhong-lu"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;author&quot;: &quot;yuhong-lu&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/yuhong-lu/Code-Examner&quot;,
+    &quot;url&quot;: &quot;https://github.com/yuhong-lu/Code-Examner.git&quot;,
     &quot;accountId&quot;: &quot;71081238-ffe5-4f06-9b5b-68dd52db81ab&quot;
   }
 }</component>
@@ -63,7 +76,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.CodeExamnerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -117,6 +130,8 @@
       <workItem from="1761383667020" duration="3918000" />
       <workItem from="1761391355070" duration="3317000" />
       <workItem from="1761458774864" duration="4121000" />
+      <workItem from="1761546049933" duration="3640000" />
+      <workItem from="1761568094063" duration="896000" />
     </task>
     <task id="LOCAL-00001" summary="demo&#10;缺少异常处理和工具类&#10;缺少Judge0和RabbitMQ">
       <option name="closed" value="true" />

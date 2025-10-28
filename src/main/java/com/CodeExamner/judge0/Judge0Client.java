@@ -14,7 +14,7 @@ import java.util.Map;
 @Component
 public class Judge0Client {
 
-    @Value("${judge0.base-url:http://localhost:2358}")
+    @Value("${app.judge0.base-url:http://localhost:2358}")
     private String baseUrl;
 
     private final RestTemplate restTemplate;
