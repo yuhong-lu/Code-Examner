@@ -62,6 +62,9 @@ app:
   judge0:
     base-url: http://localhost:2358
     callback-url: http://localhost:8080/api/judge/callback
+    # 可以添加更多配置
+    timeout: 30000
+    max-retries: 3
 
 # JWT配置
 jwt:
